@@ -2,7 +2,7 @@
 
 > 粗浅的中文翻译版本，如有不当之处，请指出，感谢：）
 
-我决定踏上编译器编写之旅。过去我写过一些[汇编器](https://github . com/doctor wkt/PDP 7-UNIX/blob/master/tools/as7)，也为无类型语言写过一个[简单编译器](https://github . com/doctor wkt/h-compiler)。但是我从来没有写过可以自编译的编译器（a compiler that can compile itself）。这就是我此行的目的地。 
+我决定踏上编译器编写之旅。过去我写过一些[汇编器](https://github.com/DoctorWkt/pdp7-unix/blob/master/tools/as7)，也为无类型语言写过一个[简单编译器](https://github.com/DoctorWkt/h-compiler)。但是我从来没有写过可以自编译的编译器（a compiler that can compile itself）。这就是我此行的目的地。 
 
 作为这个过程的一部分，我将把我的工作写下来，这样其他人就可以跟着做了。这也有助于我理清思路和想法。希望你和我会发现这很有用！
 
