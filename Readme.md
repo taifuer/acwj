@@ -10,10 +10,10 @@ But not too much theory, I want this to be a practical journey.
 
 Here are the steps I've taken so far:
 
- + [Part  0](00_Introduction/Readme.md):  Introduction to the Journey
- + [Part  1](01_Scanner/Readme.md):       Introduction to Lexical Scanning
- + [Part  2](02_Parser/Readme.md):        Introduction to Parsing
- + [Part  3](03_Precedence/Readme.md):    Operator Precedence
+ + [Part  0](00_Introduction/Readme.md) / [zh](00_Introduction/Readme-zh.md):  Introduction to the Journey
+ + [Part  1](01_Scanner/Readme.md) / [zh](01_Scanner/Readme-zh.md):       Introduction to Lexical Scanning
+ + [Part  2](02_Parser/Readme.md) / [zh](02_Parser/Readme-zh.md):        Introduction to Parsing
+ + [Part  3](03_Precedence/Readme.md) / [zh](03_Precedence/Readme-zh.md):    Operator Precedence
  + [Part  4](04_Assembly/Readme.md):      An Actual Compiler
  + [Part  5](05_Statements/Readme.md):    Statements
  + [Part  6](06_Variables/Readme.md):     Variables
