@@ -187,7 +187,7 @@ void semi(void)  { match(T_SEMI, ";"); }
 void ident(void) { match(T_IDENT, "identifier"); }
 ```
 
-Back to `var_declaration()`, once we have scanned in the idenfiier into
+Back to `var_declaration()`, once we have scanned in the identifier into
 the `Text` buffer, we can add this to the global symbol table with
 `addglob(Text)`. The code in there allows a variable to be declared
 multiple times (for now).
