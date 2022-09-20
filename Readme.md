@@ -16,7 +16,7 @@ Here are the steps I've taken so far:
  + [Part  3](03_Precedence/Readme.md) / [zh](03_Precedence/Readme-zh.md):    Operator Precedence
  + [Part  4](04_Assembly/Readme.md) / [zh](04_Assembly/Readme-zh.md):      An Actual Compiler
  + [Part  5](05_Statements/Readme.md) / [zh](05_Statements/Readme-zh.md):    Statements
- + [Part  6](06_Variables/Readme.md):     Variables
+ + [Part  6](06_Variables/Readme.md) / [zh](06_Variables/Readme-zh.md):     Variables
  + [Part  7](07_Comparisons/Readme.md):   Comparison Operators
  + [Part  8](08_If_Statements/Readme.md): If Statements
  + [Part  9](09_While_Loops/Readme.md):   While Loops
