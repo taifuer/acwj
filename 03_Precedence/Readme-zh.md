@@ -345,7 +345,7 @@ Unrecognised character . on line 3       # input04 result
 Unrecognised character a on line 1       # input05 result
 ```
 
-## 总结与下一步
+## 总结与展望
 
 也许是时候退一步看看我们已经做了什么。我们现在有:
 

@@ -111,7 +111,7 @@ static int Globs = 0;                   // Position of next free global symbol s
       ;
 ```
 
-标识符作为 `T_IDENT`  token返回，我们已经有了解析 print 语句的代码。但是，由于我们现在有三种类型的语句，因此有必要编写一个函数来处理每一种语句。`stmt.c` 中的顶层函数  `statements()` 现在看起来像：
+标识符作为 `T_IDENT`  标记返回，我们已经有了解析 print 语句的代码。但是，由于我们现在有三种类型的语句，因此有必要编写一个函数来处理每一种语句。`stmt.c` 中的顶层函数  `statements()` 现在看起来像：
 
 ```c
 // Parse one or more statements
@@ -141,7 +141,7 @@ void statements(void) {
 
 ## 变量声明
 
-让我们看看变量声明。这是在一个新文件 `decl.c` 中，因为我们将来会有很多其他类型的声明。
+让我们看看变量声明。这是在一个新文件  `decl.c` 中，因为我们将来会有很多其他类型的声明。
 
 ```c
 // Parse the declaration of a variable
@@ -165,7 +165,7 @@ void semi(void)  { match(T_SEMI, ";"); }
 void ident(void) { match(T_IDENT, "identifier"); }
 ```
 
-回到 `var_declaration()` ，一旦我们将标识符扫描到文本缓冲区中，我们就可以用 `addglob(Text)` 将它添加到全局符号表中。这里的代码允许一个变量被声明多次（目前）。
+回到  `var_declaration()` ，一旦我们将标识符扫描到文本缓冲区中，我们就可以用 `addglob(Text)` 将它添加到全局符号表中。这里的代码允许一个变量被声明多次（目前）。
 
 ## 赋值语句
 
@@ -221,11 +221,11 @@ void assignment_statement(void) {
   identifier '=' expression ';'
 ```
 
-我们将使表达式成为 A_ASSIGN 节点的左子树，并将 A_LVIDENT 细节保存在右子树中。为什么？因为我们需要在将表达式保存到变量中之前对其求值。
+我们将使表达式成为 A_ASSIGN 节点的左子树，并将 A_LVIDENT 详细信息保存在右子树中。为什么？因为我们需要在将表达式保存到变量中之前对其求值。
 
 ## AST 结构的变化
 
-我们现在需要在 A_INTLIT AST 节点中存储一个整数字面量，或者存储 A_IDENT AST 节点的符号的详细信息。为此，我在 AST 结构中添加了一个 union (在 `defs.h` 中)：
+我们现在需要将整数字面量存储在 A_INTLIT AST 节点中，或者将符号的详细信息存储在 A_IDENT AST 节点中。为此，我在 AST 结构中添加了一个 union (在 `defs.h` 中)：
 
 ```c
 // Abstract Syntax Tree structure
@@ -296,7 +296,7 @@ int genAST(struct ASTnode *n, int reg) {
 
 ## 生成 x86-64 代码
 
-你可能已经注意到，我把旧的 `cgload()` 函数的名字改为 `cgloadint()`。这是更具体的。现在我们有了一个函数来加载全局变量的值（在 `cg.c` 中）：
+你可能已经注意到，我把旧的 `cgload()` 函数的名字改成了 `cgloadint()`。这是更为具体的。现在我们有了一个函数来加载全局变量的值（在 `cg.c` 中）：
 
 ```c
 int cgloadglob(char *identifier) {
@@ -375,7 +375,7 @@ static struct ASTnode *primary(void) {
 
 还要注意，检索变量值的 AST 叶节点是 A_IDENT 节点。保存到变量中的叶节点是 A_LVIDENT 节点。这是右值和左值的区别。
 
-## 尝试一下
+## 试一下
 
 我想这就是变量声明的全部内容了，所以让我们用 `input02` 文件来试试：
 
@@ -438,7 +438,7 @@ void fatalc(char *s, int c) {
 }
 ```
 
-## 总结与下一步
+## 总结与展望
 
 因此，这是一项艰巨的工作。我们必须编写符号表管理的初始部分。我们必须处理两种新的语句类型。我们必须添加一些新的 token 和一些新的 AST 节点类型。最后，我们必须添加一些代码来生成正确的 x86-64 程序集输出。
 
