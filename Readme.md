@@ -19,7 +19,7 @@ Here are the steps I've taken so far:
  + [Part  6](06_Variables/Readme.md) / [zh](06_Variables/Readme-zh.md):     Variables
  + [Part  7](07_Comparisons/Readme.md) / [zh](07_Comparisons/Readme-zh.md):   Comparison Operators
  + [Part  8](08_If_Statements/Readme.md) / [zh](08_If_Statements/Readme-zh.md): If Statements
- + [Part  9](09_While_Loops/Readme.md):   While Loops
+ + [Part  9](09_While_Loops/Readme.md) / [zh](09_While_Loops/Readme-zh.md):   While Loops
  + [Part 10](10_For_Loops/Readme.md):     For Loops
  + [Part 11](11_Functions_pt1/Readme.md): Functions, part 1
  + [Part 12](12_Types_pt1/Readme.md):     Types, part 1
