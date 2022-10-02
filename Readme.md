@@ -25,7 +25,7 @@ Here are the steps I've taken so far:
  + [Part 12](12_Types_pt1/Readme.md) / [zh](12_Types_pt1/Readme-zh.md):     Types, part 1
  + [Part 13](13_Functions_pt2/Readme.md) / [zh](13_Functions_pt2/Readme-zh.md): Functions, part 2
  + [Part 14](14_ARM_Platform/Readme.md) / [zh](14_ARM_Platform/Readme-zh.md):  Generating ARM Assembly Code
- + [Part 15](15_Pointers_pt1/Readme.md):  Pointers, part 1
+ + [Part 15](15_Pointers_pt1/Readme.md) / [zh](15_Pointers_pt1/Readme-zh.md):  Pointers, part 1
  + [Part 16](16_Global_Vars/Readme.md):   Declaring Global Variables Properly
  + [Part 17](17_Scaling_Offsets/Readme.md): Better Type Checking and Pointer Offsets
  + [Part 18](18_Lvalues_Revisited/Readme.md): Lvalues and Rvalues Revisited
