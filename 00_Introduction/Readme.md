@@ -82,7 +82,7 @@ structure:
 ```
 
 > This is also the place where the compiler can detect syntax errors, like if
-the semicolon was missing on the end of the first *print* statement.
+the semicolon was missing on the end of the second *print* statement.
 
  + Do [semantic analysis](https://en.wikipedia.org/wiki/Semantic_analysis_(compilers))
    of the input, i.e. understand the meaning of the input. This is actually different
@@ -99,7 +99,7 @@ the semicolon was missing on the end of the first *print* statement.
  + [Translate](https://en.wikipedia.org/wiki/Code_generation_(compiler))
    the meaning of the input into a different language. Here we
    convert the input, parts at a time, into a lower-level language.
-  
+
 ## Resources
 
 There's a lot of compiler resources out on the Internet. Here are the ones
