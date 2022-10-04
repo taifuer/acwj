@@ -13,7 +13,7 @@ IF 语句的语法是：
     perform this other block of code
 ```
 
-那么，这通常是如何转换成汇编语言的呢？事实表明，我们进行相反的比较，如果相反的比较为真，则跳转 / 分支。
+那么，这通常是如何转换成汇编语言的呢？事实表明，我们进行相反的比较，如果相反的比较为真，则跳转或分支。
 
 ```c
        perform the opposite comparison
@@ -63,11 +63,11 @@ L2:
 L1:
 ```
 
-所以，在这段旅程中，我已经实现了 IF 语句。由于这是一个工作项目（working project），作为旅程的一部分，我确实不得不撤销一些东西，并对它们进行重构。我将尝试涵盖这些变化以及沿途的补充内容。
+所以，在这段旅程中，我已经实现了 IF 语句。由于这是一个工作项目，因此我确实必须撤消一些东西，并作为旅程的一部分进行重构。我将尝试介绍这些变化以及添加的内容。
 
-## 新的 token 与悬空 else
+## 新标记与悬空 else
 
-我们的语言中需要一些新的 token。我还（目前）希望避免 [悬空 else](https://en.wikipedia.org/wiki/Dangling_else)（dangling else） 问题。为此，我修改了语法，以便所有语句组都围绕 '{' ... '}' 花括号；我把这样的分组称为“复合语句”。我们还需要 '(' ... ')' 括号保存 IF 表达式，加上关键字 'if' 和 'else'。因此，新的 token 是（在 `def.h` 中）：
+我们的语言中需要一些新标记。我还（目前）希望避免 [悬空 else](https://en.wikipedia.org/wiki/Dangling_else)（dangling else） 问题。为此，我修改了语法，以便所有语句组都围绕 '{' ... '}' 花括号；我把这样的分组称为“复合语句”。我们还需要 '(' ... ')' 括号保存 IF 表达式，加上关键字 'if' 和 'else'。因此，新的标记是（在 `def.h` 中）：
 
 ```c
   T_LBRACE, T_RBRACE, T_LPAREN, T_RPAREN,
@@ -75,9 +75,9 @@ L1:
   ..., T_IF, T_ELSE
 ```
 
-## 扫描 token
+## 扫描标记
 
-单字符 token 应该是显而易见的，我不会给出扫描它们的代码。关键字也应该非常明显，但是我将给出 `scan.c` 中 ` keyword()` 的扫描代码：
+单字符标记应该很明显，我不会给出扫描它们的代码。关键字也应该非常明显，但是我将给出 `scan.c` 中 ` keyword()` 的扫描代码：
 
 ```c
   switch (*s) {
@@ -131,7 +131,7 @@ L1:
 
 我省略了 `true_false_expression` 的定义，但当我们再添加一些运算符时，我会把它加进去。
 
-注意 IF 语句的语法：它要么是一个 if_head（没有 'else' 子句），要么是一个 `if_head` 后面跟着一个 'else' 和一个 `compound_statement`。
+注意 IF 语句的语法：它要么是一个 `if_head`（没有 'else' 子句），要么是一个 `if_head` 后面跟着一个 'else' 和一个 `compound_statement`。
 
 我已经将所有不同的语句类型分离出来，让它们有自己的非终结符名称。另外，前面的 `statements` 非终结符现在是 `compound_statement` 非终结符，这需要 '{' ... '}' 括起来。
 
@@ -149,7 +149,7 @@ L1:
   }
 ```
 
-而且对于“if”和“each”属于哪一个也没有歧义。这就解决了悬空 else 问题。稍后，我将使 '{'…'}' 成为可选的。
+而且对于 'if' 和 'else' 属于哪一个也没有歧义。这就解决了悬空 else 问题。稍后，我将使 '{'…'}' 成为可选的。
 
 ## 解析复合语句
 
@@ -201,7 +201,7 @@ struct ASTnode *compound_statement(void) {
   }
 ```
 
-首先，请注意，代码强制解析器用 `lbrace()` 匹配复合语句开头的 '{ '，只有在用 `rbrace()` 匹配了结尾的 '}' 后，我们才能退出。
+首先，请注意，代码强制解析器用 `lbrace()` 匹配复合语句开头的 '{'，只有在用 `rbrace()` 匹配了结尾的 '}' 后，我们才能退出。
 
 其次，注意 `print_statement()`、`assignment_statement()` 和 `if_statement()` 都返回一个 AST 树，`compound_statement()` 也是如此。在我们的旧代码中，`print_statement()` 本身调用 `genAST()` 来计算表达式，然后调用 `genprintint()`。类似地，`assignment_statement()` 也调用 `genAST()` 进行赋值。
 
@@ -209,13 +209,13 @@ struct ASTnode *compound_statement(void) {
 
 这不是强制性的。例如，SubC 只为表达式生成 ASTs。对于该语言的结构部分，如语句，SubC 对代码生成器进行特定的调用，就像我在以前版本的编译器中所做的那样。
 
-现在，我决定用解析器为整个输入生成一个 AST 树。一旦输入被解析，就可以从一个AST树中生成汇编输出。
+现在，我决定用解析器为整个输入生成一个 AST 树。一旦输入被解析，就可以从一个 AST 树中生成汇编输出。
 
-稍后，我可能会为每个函数生成一个 AST 树。后面再说。
+以后我可能会为每个函数生成一个 AST 树。后面再说。
 
 ## 解析 IF 语法
 
-因为我们是递归下降解析器，所以解析 IF 语句还不算太差：
+因为我们是递归下降解析器，所以对 IF 语句的解析还不错：
 
 ```c
 // Parse an IF statement including
@@ -261,7 +261,7 @@ struct ASTnode *if_statement(void) {
    mkastnode(A_IF, condAST, trueAST, falseAST, 0);
 ```
 
-那是三棵 AST 子树！这是怎么回事？如你所见，IF 语句有三个子语句：
+那是三棵 AST 子树！这是怎么回事？如你所见，IF 语句有三个孩子：
 
 - 计算条件的子树
 - 紧随其后的复合语句
@@ -306,7 +306,7 @@ struct ASTnode {
 
 还有一个新的 A_GLUE AST 节点类型。这是做什么用的？我们现在构建了一个包含大量语句的 AST 树，因此我们需要一种方法将它们粘合在一起。
 
-回顾 `compound_statement()` 循环代码的结尾：
+查看 `compound_statement()` 循环代码的结尾：
 
 ```c
   if (left != NULL)
@@ -372,7 +372,7 @@ int genAST(struct ASTnode *n, int reg, int parentASTop) {
   }
 ```
 
-如果不返回，则继续执行常规的二进制运算符 AST 节点，但有一个例外：比较节点：
+如果不返回，则继续执行常规的二元运算符 AST 节点，但有一个例外：比较节点：
 
 ```c
     case A_EQ:
@@ -463,7 +463,7 @@ static int genIFAST(struct ASTnode *n) {
 
 所以我们现在有了一些新的 x86-64 代码生成函数。其中一些函数取代了我们在之前创建的 6 个 cgXXX() 比较函数。
 
-对于普通的比较函数，我们现在传入 AST 操作以选择相关的 x86-64 集合指令：
+对于普通的比较函数，我们现在传入 AST 操作以选择相关的 x86-64 `set` 指令：
 
 ```c
 // List of comparison instructions,
@@ -488,7 +488,7 @@ int cgcompare_and_set(int ASTop, int r1, int r2) {
 
 我还发现了一个 x86-64 指令 `movzbq`，它从一个寄存器中移动最低字节，并将其扩展到 64 位寄存器中。我现在用它代替了旧代码中的 `and $255`。
 
-我们需要一个函数来生成一个标签并跳转到它：
+我们需要一个函数来生成标签并跳转到它：
 
 ```c
 // Generate a label
@@ -502,7 +502,7 @@ void cgjump(int l) {
 }
 ```
 
-最后，我们需要一个函数来进行比较并基于相反的比较进行跳转。因此，使用 AST 比较节点类型，我们进行相反的比较：
+最后，我们需要一个函数来进行比较，并根据相反的比较进行跳转。因此，使用 AST 比较节点类型，我们进行相反的比较：
 
 ```c
 // List of inverted jump instructions,
