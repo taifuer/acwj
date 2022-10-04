@@ -103,7 +103,7 @@ the next token. If it's a '(', we call `function_declaration()`. If not,
 we can assume that it is a  `var_declaration()`. We pass the `type`
 in to both functions.
 
-Now that we are receiving the AST `tree` from `function_declaration()`
+Now that we are receiving the AST tree from `function_declaration()`
 here, we can generate the code from the AST tree immediately. This code
 was in `main()` but has now been moved here. `main()` now only has to 
 call `global_declarations()`:
