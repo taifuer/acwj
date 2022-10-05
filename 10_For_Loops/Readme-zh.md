@@ -22,13 +22,13 @@
  postop_statement: statement  ;        (for now)
 ```
 
-`preop_statement` 在循环开始之前运行。稍后，我们将不得不精确地限制这里可以执行的操作的类型（例如，没有 IF 语句）。然后计算 `true_false` 表达式。如果为 `true`，循环执行 `compound_statement`。完成此操作后，将执行 `postop_statement`，代码返回来继续执行 `true_false_expression`。
+`preop_statement` 在循环开始之前运行。稍后，我们将不得不精确地限制这里可以执行的操作的类型（例如，没有 IF 语句）。然后计算 `true_false_expression`。如果为 `true`，循环执行 `compound_statement`。完成此操作后，将执行 `postop_statement`，代码返回来继续执行 `true_false_expression`。
 
 ## 问题
 
 问题在于 `postop_statement` 是在 `compound_statemment` 之前解析的，但我们必须在  `compound_statemment` 的代码之后生成 `postop_sstatement` 的代码。
 
-有几种方法可以解决这个问题。当我编写以前的编译器时，我选择将 `compound_statement` 汇编代码放在一个临时缓冲区中，并在为 `postop_statement` 生成代码后放回缓冲区。在 SubC 编译器中，Nils 巧妙地利用标签并跳转到标签来“线程化”代码的执行，以强制执行正确的序列。
+有几种方法可以解决这个问题。在我以前编写编译器时，我选择将 `compound_statement` 汇编代码放在一个临时缓冲区中，并在为 `postop_statement` 生成代码后放回缓冲区。在 SubC 编译器中，Nils 巧妙地利用标签，并跳转到标签来“线程化”代码的执行，以强制执行正确的序列。
 
 但是我们在这里建立了一个 AST 树。让我们使用它以正确的顺序获得生成的汇编代码。
 
@@ -70,9 +70,9 @@
 
 这也意味着我们需要一个新的 T_FOR token，但不需要一个新的 AST 节点类型。因此唯一的编译器更改将是扫描和解析。
 
-## token 和扫描
+## 标记和扫描
 
-有一个新的关键字 'for' 和一个关联的 token T_FOR。没有大的变化。
+有一个新的关键字 'for' 和一个对应的标记 T_FOR。没有大的变化。
 
 ## 解析语句
 

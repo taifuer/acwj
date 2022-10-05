@@ -24,9 +24,9 @@ Lend:
 
 让我们看看我们是如何做到这一点的。
 
-## 新的 token
+## 新的标记
 
-对于新的 'while' 关键字，我们需要一个新的 token T_WHILE。对 `defs.h` 和 `scan.c` 的更改非常明显，所以我在这里省略它们。
+对于新的 'while' 关键字，我们需要一个新的标记 T_WHILE。对 `defs.h` 和 `scan.c` 的更改非常明显，所以我在这里省略它们。
 
 ## 解析 while 语法
 
@@ -68,7 +68,7 @@ struct ASTnode *while_statement(void) {
 
 ## 通用代码生成
 
-我们需要创建一个开始和结束标签，计算条件并插入适当的跳转以退出循环并返回到循环的顶部。同样，这比生成IF语句的代码简单得多。在 `gen.c` 中：
+我们需要创建一个开始和结束标签，计算条件并插入适当的跳转以退出循环并返回到循环的顶部。同样，这比生成 IF 语句的代码简单得多。在 `gen.c` 中：
 
 ```c
 // Generate the code for a WHILE statement
@@ -100,7 +100,7 @@ static int genWHILE(struct ASTnode *n) {
 }
 ```
 
-我必须做的一件事是认识到比较运算符的父 AST 节点现在可以是 A_WHILE，因此在 `genAST()`中，比较运算符的代码如下所示：
+我必须做的一件事是意识到比较运算符的父 AST 节点现在可以是 A_WHILE，因此在 `genAST()`中，比较运算符的代码如下所示：
 
 ```c
     case A_EQ:
@@ -122,7 +122,7 @@ static int genWHILE(struct ASTnode *n) {
 
 ## 测试
 
-我已经将所有输入文件移到 `test/` 目录中。如果现在进行 `make test`，它将进入此目录，编译每个输入，并将输出与已知的良好输出进行比较：
+我已经将所有输入文件移到 `test/` 目录中。如果现在进行 `make test`，它将进入此目录，编译每个输入，并将输出与已知的正确输出进行比较：
 
 ```bash
 cc -o comp1 -g cg.c decl.c expr.c gen.c main.c misc.c scan.c stmt.c
@@ -197,8 +197,8 @@ L2:
 我想我们现在也有了[图灵完备](https://en.wikipedia.org/wiki/Turing_completeness)语言：
 
 - 无限的存储空间，也就是无限的变量
-- 基于存储的值（即IF语句）做出决策的能力
-- 改变方向的能力，即WHILE循环
+- 基于存储的值做出决策的能力，即 IF 语句
+- 改变方向的能力，即 WHILE 循环
 
 所以我们可以停止了，我们的任务完成了！不，当然不是。我们仍在努力让编译器可以编译自己。
 
