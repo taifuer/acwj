@@ -28,7 +28,7 @@ Here are the steps I've taken so far:
  + [Part 15](15_Pointers_pt1/Readme.md) / [zh](15_Pointers_pt1/Readme-zh.md):  Pointers, part 1
  + [Part 16](16_Global_Vars/Readme.md) / [zh](16_Global_Vars/Readme-zh.md):   Declaring Global Variables Properly
  + [Part 17](17_Scaling_Offsets/Readme.md) / [zh](17_Scaling_Offsets/Readme-zh.md): Better Type Checking and Pointer Offsets
- + [Part 18](18_Lvalues_Revisited/Readme.md): Lvalues and Rvalues Revisited
+ + [Part 18](18_Lvalues_Revisited/Readme.md) / [zh](18_Lvalues_Revisited/Readme-zh.md): Lvalues and Rvalues Revisited
  + [Part 19](19_Arrays_pt1/Readme.md):    Arrays, part 1
  + [Part 20](20_Char_Str_Literals/Readme.md): Character and String Literals
  + [Part 21](21_More_Operators/Readme.md): More Operators
