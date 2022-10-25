@@ -31,7 +31,7 @@ Here are the steps I've taken so far:
  + [Part 18](18_Lvalues_Revisited/Readme.md) / [zh](18_Lvalues_Revisited/Readme-zh.md): Lvalues and Rvalues Revisited
  + [Part 19](19_Arrays_pt1/Readme.md) / [zh](19_Arrays_pt1/Readme-zh.md):    Arrays, part 1
  + [Part 20](20_Char_Str_Literals/Readme.md) / [zh](20_Char_Str_Literals/Readme-zh.md): Character and String Literals
- + [Part 21](21_More_Operators/Readme.md): More Operators
+ + [Part 21](21_More_Operators/Readme.md) / [zh](21_More_Operators/Readme-zh.md): More Operators
  + [Part 22](22_Design_Locals/Readme.md): Design Ideas for Local Variables and Function Calls
  + [Part 23](23_Local_Variables/Readme.md): Local Variables
  + [Part 24](24_Function_Params/Readme.md): Function Parameters
