@@ -30,7 +30,7 @@ Here are the steps I've taken so far:
  + [Part 17](17_Scaling_Offsets/Readme.md) / [zh](17_Scaling_Offsets/Readme-zh.md): Better Type Checking and Pointer Offsets
  + [Part 18](18_Lvalues_Revisited/Readme.md) / [zh](18_Lvalues_Revisited/Readme-zh.md): Lvalues and Rvalues Revisited
  + [Part 19](19_Arrays_pt1/Readme.md) / [zh](19_Arrays_pt1/Readme-zh.md):    Arrays, part 1
- + [Part 20](20_Char_Str_Literals/Readme.md): Character and String Literals
+ + [Part 20](20_Char_Str_Literals/Readme.md) / [zh](20_Char_Str_Literals/Readme-zh.md): Character and String Literals
  + [Part 21](21_More_Operators/Readme.md): More Operators
  + [Part 22](22_Design_Locals/Readme.md): Design Ideas for Local Variables and Function Calls
  + [Part 23](23_Local_Variables/Readme.md): Local Variables
