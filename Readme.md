@@ -33,7 +33,7 @@ Here are the steps I've taken so far:
  + [Part 20](20_Char_Str_Literals/Readme.md) / [zh](20_Char_Str_Literals/Readme-zh.md): Character and String Literals
  + [Part 21](21_More_Operators/Readme.md) / [zh](21_More_Operators/Readme-zh.md): More Operators
  + [Part 22](22_Design_Locals/Readme.md) / [zh](22_Design_Locals/Readme-zh.md): Design Ideas for Local Variables and Function Calls
- + [Part 23](23_Local_Variables/Readme.md): Local Variables
+ + [Part 23](23_Local_Variables/Readme.md) / [zh](23_Local_Variables/Readme-zh.md): Local Variables
  + [Part 24](24_Function_Params/Readme.md): Function Parameters
  + [Part 25](25_Function_Arguments/Readme.md): Function Calls and Arguments
  + [Part 26](26_Prototypes/Readme.md):    Function Prototypes
