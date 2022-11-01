@@ -35,7 +35,7 @@ Here are the steps I've taken so far:
  + [Part 22](22_Design_Locals/Readme.md) / [zh](22_Design_Locals/Readme-zh.md): Design Ideas for Local Variables and Function Calls
  + [Part 23](23_Local_Variables/Readme.md) / [zh](23_Local_Variables/Readme-zh.md): Local Variables
  + [Part 24](24_Function_Params/Readme.md) / [zh](24_Function_Params/Readme-zh.md): Function Parameters
- + [Part 25](25_Function_Arguments/Readme.md): Function Calls and Arguments
+ + [Part 25](25_Function_Arguments/Readme.md) / [zh](25_Function_Arguments/Readme-zh.md): Function Calls and Arguments
  + [Part 26](26_Prototypes/Readme.md):    Function Prototypes
  + [Part 27](27_Testing_Errors/Readme.md): Regression Testing and a Nice Surprise
  + [Part 28](28_Runtime_Flags/Readme.md): Adding More Run-time Flags
