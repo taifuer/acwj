@@ -38,8 +38,8 @@ Here are the steps I've taken so far:
  + [Part 25](25_Function_Arguments/Readme.md) / [zh](25_Function_Arguments/Readme-zh.md): Function Calls and Arguments
  + [Part 26](26_Prototypes/Readme.md) / [zh](26_Prototypes/Readme-zh.md):    Function Prototypes
  + [Part 27](27_Testing_Errors/Readme.md) / [zh](27_Testing_Errors/Readme-zh.md): Regression Testing and a Nice Surprise
- + [Part 28](28_Runtime_Flags/Readme.md) / [zh]((28_Runtime_Flag/Readme-zh.md)): Adding More Run-time Flags
- + [Part 29](29_Refactoring/Readme.md):   A Bit of Refactoring
+ + [Part 28](28_Runtime_Flags/Readme.md) / [zh](28_Runtime_Flag/Readme-zh.md): Adding More Run-time Flags
+ + [Part 29](29_Refactoring/Readme.md) / [zh](29_Refactoring/Readme-zh.md):   A Bit of Refactoring
  + [Part 30](30_Design_Composites/Readme.md): Designing Structs, Unions and Enums
  + [Part 31](31_Struct_Declarations/Readme.md): Implementing Structs, Part 1
  + [Part 32](32_Struct_Access_pt1/Readme.md): Accessing Members in a Struct
